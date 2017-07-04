@@ -1,0 +1,33 @@
+Fortigates only support 4!!!! ECMP routes via iBGP/eBGP (ECMP load balancing across multiple (four) eBGP/iBGP connections.)
+When configuring route redistribution, you cannot use multiple route-maps to control redistirbution.
+When configuring route-maps, you cannot do a logical AND to match BGP communities.
+Even if your interfaces are administratively down, the networks allocated on them still appear in the active routing table.
+Preconfiguring a fortigate cluster and attepting to make a live HA will cause the Fortigate to disregard your HA proprities thus making the, probably factory default, fortigate your primary in the cluster.
+The ipsmonitor/ipsengine process can max out your cpu under mysterious circumstances, no matter the ammount of traffic.
+You cannot make insert a port into a software switch or aggregation without removing all your interface references. 
+If you make a support ticket, every solution is to format the device and reapply the firmware.
+Redistribution of BGP routes into OSPF causes the BGP next-hop to be put directly into the forward-address. This is not a behaviour you can modify.
+QinQ is not supported.
+FortiTokens can only be provisioned to one user and one device pairing in Fortimanager. Restriction does not apply on CLI.
+Route-map typo'd to routemap under OSPF redistribution hierarchy. Documented "internally". #wontfix
+Docs for their API cost $5000 (You need a developer account). Use of the API is free. 
+Certain read-only operations (Reading config) in the FortiManager cause config write. Even if the user is configured as read-only
+Configuring SFLOW on a 1500D with 5.0.X caps throughput to 1Gbit/s
+Enabling IPSec NPU-Offloading on a 1500D with 5.0.X leads to _EVERY_ session on this NPU being dropped when rekeying occured
+When under DoS or DDOS attack, hearbeat traffic between two Fortigates is not highest prio so a failover can happen because of heartbeats missed. Workaround: Higher timeouts for failover
+When something CPU intensive happening (traffic burst, DoS, IPS going nuts) BFD packet generation is missed and route flapping happens
+Fortigate will beat the Guiness World Record for the most console port types ever used. 
+The GUI always seems to glitch, no matter the version of the browser.
+The firmware web upgrade shows no progress bar but you'll know when it's done. Unless you decided to refresh, then you'll know faster.
+Downgrading to previous firmware versions results in configuration loss on all models.
+"get system autoupdate" and "get system auto-update" are not the same thing.
+Can find non-numeric data in a GAUGE (fgProcessorUsage returns value of type GAUGE with added %)
+Versions 4.x to 5.0.7 of FortiOS have a remotely exploitable backdoor ( https://t.co/6cOa1P5f4v ) 
+GUI can sometimes give you the everything is ok error ( https://i.imgur.com/3SPoS31.png )
+Interface descriptions are not exported to ifName or ifAlias in SNMP
+Fortimanager stores all session logs to edge devices in plain text on disk. Including sessions pushing plain text passwords.
+FortiOS 5.2.2 w/ sflow enabled breaks NPU offload for VPN encrypt/decrypt!
+FortiOS 5.4.x removed the customize reports button, the button's functionality seemed to be platform dependant, not firmware version dependant.
+You cannot ssh/telnet out a specific source interface, only ping. 
+The recommended firmware version in the GUI does not necessarily respect the upgrade matrix. 
+Adding multiple interfaces to a policy 5.4 is a 'feature' and must be enabled. 
